@@ -25,7 +25,7 @@ export default function Home() {
               <Navbar />
             </div>
 
-            <div className="text-slate-800 font-semibold tracking-[-2.3px] sm:tracking-[-3.3px] md:tracking-[-4.3px]">
+            <div className="text-slate-800 dark:text-slate-50 font-semibold tracking-[-2.3px] sm:tracking-[-3.3px] md:tracking-[-4.3px]">
               <h1 className="text-5xl sm:text-6xl md:text-7xl">
                 <span className="flex flex-col items-start">
                   <span className="mb-[-10px]">meet saad,</span>
