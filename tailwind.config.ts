@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const plugin = require("tailwindcss/plugin");
 
 const config: Config = {
   content: [
@@ -26,6 +27,12 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }: { addVariant: Function }) {
+      // this class is applied to `html` by `app/theme-efect.ts`, similar
+      // to how `dark:` gets enabled
+      addVariant("theme-system", ".theme-system &");
+    }),
+  ],
 };
 export default config;

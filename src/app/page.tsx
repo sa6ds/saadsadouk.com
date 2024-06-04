@@ -42,7 +42,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex pointer-events-none justify-center py-2 -mt-40 sm:-mt-36 md:-mt-28 overflow-x-auto">
+        <div className="flex pointer-events-none justify-center py-2 -mt-40 sm:-mt-36 md:-mt-28 overflow-x-clip">
           <div className="min-w-max min-h-max flex flex-nowrap space-x-4 md:space-x-8">
             <ImageItem src="/img-2.jpg" rotate />
             <ImageItem src="/img-1.jpg" rotate={false} />
