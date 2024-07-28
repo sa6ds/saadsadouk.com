@@ -33,7 +33,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="top-full text-slate-500 dark:bg-slate-950 dark:text-slate-300 m-0 min-h-[100vh]">
+      <body className="top-full text-slate-500 dark:bg-black dark:text-slate-300 m-0 min-h-[100vh]">
         {children}
       </body>
     </html>
