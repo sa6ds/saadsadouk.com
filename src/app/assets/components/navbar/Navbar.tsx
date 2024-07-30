@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="h-10 flex gap-3 font-semibold text-lg">
+    <nav className="w-full max-w-[550px] h-10 flex gap-3 font-semibold text-lg">
       {NavbarItems.map((item) => (
         <h2
           key={item.url}
