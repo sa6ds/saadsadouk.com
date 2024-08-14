@@ -21,8 +21,8 @@ export default function About() {
             About me
           </h3>
           <p>
-            I am currently a software developer pursuing my Bachelor of Science
-            in Computer Science at George Mason University. Originally from the
+            I am a software developer pursuing my Bachelor of Science in
+            Computer Science at George Mason University. Originally from the
             Virginia Beach area, I’ve developed a deep passion for software
             development and open-source projects.
           </p>
@@ -38,14 +38,14 @@ export default function About() {
             IPConfigure Inc., where I worked on developing features for a
             web-based UI using Angular and TypeScript. This internship was my
             first real taste of the professional software development world, and
-            I loved collaborating with a talented team. It taught me how to
+            I loved collaborating with such a talented team. It taught me how to
             navigate the challenges of the software development life cycle and
             deepened my understanding of industry standards and practices.
           </p>
           <p className="mt-4">
-            As a former reseller, I knew firsthand the challenges of managing
-            inventory and the need for a comprehensive toolkit. This insight
-            inspired me to create{" "}
+            With this experience under my belt, I reflected on my own background
+            as a former reseller and recognized the challenges of managing
+            inventory and tracking profits. This insight inspired me to create{" "}
             <Link
               target="_blank"
               className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"
@@ -68,11 +68,12 @@ export default function About() {
           </p>
 
           <p className="mt-4">
-            I am passionate about building quality software that enhances user
-            experiences. My goal is to contribute to meaningful projects and
-            develop innovative solutions that make a positive impact. I look
-            forward to joining a team where I can apply my skills as a software
-            engineer to create valuable products.
+            As I continue to grow as a developer, I remain passionate about
+            building quality software that enhances user experiences. My goal is
+            to contribute to meaningful projects and develop innovative
+            solutions that make a positive impact. I look forward to joining a
+            team where I can apply my skills as a software engineer to create
+            valuable products.
           </p>
 
           <h3 className="text-slate-800 mt-5 mb-1 dark:text-slate-50 font-bold text-xl tracking-normal">
