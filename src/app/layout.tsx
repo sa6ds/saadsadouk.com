@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { themeEffect } from "./assets/components/theme/themeEffect";
+import { themeEffect } from "./components/theme/themeEffect";
 
 export const metadata: Metadata = {
   title: "Saad Sadouk - Software Engineer",

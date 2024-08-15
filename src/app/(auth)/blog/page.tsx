@@ -1,20 +1,31 @@
-// pages/blog.tsx
-
-import { pageItems } from "@/app/assets/components/pageItems/pageItems";
+import { getSortedPostsData, BlogPostData } from "../../utils/markdown";
+import Link from "next/link";
+import PageLayout from "../PageLayout";
 
 export default function Blog() {
-  const { name } = pageItems.blog;
+  const allPostsData: BlogPostData[] = getSortedPostsData();
 
   return (
-    <main>
+    <PageLayout>
       <h1 className="text-5xl md:text-6xl lg:text-7xl">
         <span className="flex flex-col">
           <span className="mb-[-10px] text-slate-800 dark:text-slate-50 font-semibold tracking-tight sm:tracking-tighter">
-            {name.toLowerCase()}
+            blog
           </span>
         </span>
       </h1>
-      <div className="mt-10">{/* Blog content here */}</div>
-    </main>
+      <div className="mt-10">
+        <ul className="space-y-4">
+          {allPostsData.map(({ id, title, pubDate }) => (
+            <li key={id}>
+              <Link href={`/blog/${id}`}>
+                <h2>{title}</h2>
+                <p>{pubDate}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </PageLayout>
   );
 }

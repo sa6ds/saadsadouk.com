@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Navbar from "./assets/components/navbar/Navbar";
+import PageLayout from "./(auth)/PageLayout";
 
 const ImageItem = ({ src, rotate }: { src: string; rotate: boolean }) => (
   <div className="relative h-64 w-48 md:h-72 md:w-56">
@@ -16,10 +16,8 @@ const ImageItem = ({ src, rotate }: { src: string; rotate: boolean }) => (
 
 export default function Home() {
   return (
-    <main className="flex-grow flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-[550px] h-96">
-        <Navbar />
-
+    <PageLayout>
+      <div className="h-96">
         <div className="text-slate-800 dark:text-slate-50 font-semibold tracking-[-2.3px] sm:tracking-[-3.3px] md:tracking-[-4.3px]">
           <h1 className="text-5xl sm:text-6xl md:text-7xl">
             <span className="flex flex-col items-start">
@@ -47,6 +45,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </PageLayout>
   );
 }
