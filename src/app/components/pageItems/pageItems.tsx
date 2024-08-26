@@ -1,5 +1,3 @@
-// utils/pageItems.ts
-
 interface PageItem {
   name: string;
 }
