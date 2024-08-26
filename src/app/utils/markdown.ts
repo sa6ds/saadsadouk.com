@@ -2,8 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
-import slugify from "slugify";
+import rehypeStringify from "rehype-stringify";
+import remarkRehype from "remark-rehype";
 
 const postsDirectory = path.join(process.cwd(), "/src/app/content/blog");
 
@@ -22,10 +22,8 @@ export function getSortedPostsData(): BlogPostData[] {
 
     const matterResult = matter(fileContents);
 
-    const slug = slugify(matterResult.data.title, { lower: true });
-
     return {
-      id: slug,
+      id: fileName.replace(/\.md$/, ""),
       title: matterResult.data.title as string,
       pubDate: matterResult.data.pubDate as string,
     };
@@ -36,31 +34,20 @@ export function getSortedPostsData(): BlogPostData[] {
   });
 }
 
-export async function getPostData(slug: string): Promise<BlogPostData> {
-  const fileNames = fs.readdirSync(postsDirectory);
-  const fileName = fileNames.find((name) => {
-    const fullPath = path.join(postsDirectory, name);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const matterResult = matter(fileContents);
-    return slugify(matterResult.data.title, { lower: true }) === slug;
-  });
-
-  if (!fileName) {
-    throw new Error("Post not found");
-  }
-
-  const fullPath = path.join(postsDirectory, fileName);
+export async function getPostData(id: string): Promise<BlogPostData> {
+  const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
 
   const processedContent = await remark()
-    .use(html)
+    .use(remarkRehype)
+    .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
   return {
-    id: slug,
+    id,
     contentHtml,
     title: matterResult.data.title as string,
     pubDate: matterResult.data.pubDate as string,

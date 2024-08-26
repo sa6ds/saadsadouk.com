@@ -1,9 +1,15 @@
 import { getSortedPostsData, BlogPostData } from "../../utils/markdown";
 import Link from "next/link";
 import PageLayout from "../PageLayout";
+import { abbreviateMonth } from "@/app/utils/date";
 
 export default function Blog() {
+  // Get the sorted posts data
   const allPostsData: BlogPostData[] = getSortedPostsData();
+
+  const sortedPosts = allPostsData.sort((a, b) => {
+    return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+  });
 
   return (
     <PageLayout>
@@ -15,16 +21,19 @@ export default function Blog() {
         </span>
       </h1>
       <div className="mt-10">
-        <ul className="space-y-4">
-          {allPostsData.map(({ id, title, pubDate }) => (
-            <li key={id}>
-              <Link href={`/blog/${id}`}>
-                <h2>{title}</h2>
-                <p>{pubDate}</p>
+        <div className="space-y-4">
+          {sortedPosts.map(({ id, title, pubDate }) => (
+            <div key={id}>
+              <Link className="flex text-md font-semibold" href={`/blog/${id}`}>
+                <h2 className="w-96 my-auto">{title}</h2>
+                <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
+                <p className="ml-auto my-auto text-nowrap">
+                  {abbreviateMonth(pubDate)}
+                </p>
               </Link>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </PageLayout>
   );

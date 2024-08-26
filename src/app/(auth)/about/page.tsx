@@ -15,35 +15,29 @@ export default function About() {
         </span>
       </h1>
       <div className="mt-10">
-        <h3 className="text-slate-800 mt-5 mb-1 dark:text-slate-50 font-bold text-xl tracking-normal">
-          About me
+        <h3 className="text-slate-800 my-5 dark:text-slate-50 font-bold text-xl tracking-tight">
+          About Me
         </h3>
         <p>
-          I am a software developer pursuing my Bachelor of Science in Computer
-          Science at George Mason University. Originally from the Virginia Beach
-          area, I’ve developed a deep passion for software development and
-          open-source projects.
+          I am a software developer pursuing a Bachelor of Science in Computer
+          Science at George Mason University. Originally from Virginia Beach, I
+          have a deep passion for software development and open-source projects.
         </p>
         <p className="mt-4">
-          My journey into the world of technology began in my early teens,
-          sparked by a curiosity about how computers and the software we use
-          every day actually work. This fascination drove me to pursue an
-          Associate of Computer Science at Virginia Peninsula Community College,
-          where I achieved a GPA of 3.9.
+          My journey into technology began in my early teens, driven by a
+          curiosity about how computers and software work. This led me to earn
+          an Associate in Computer Science from Virginia Peninsula Community
+          College with a GPA of 3.9.
         </p>
         <p className="mt-4">
-          I gained some valuable experience as a Software Developer Intern at
-          IPConfigure Inc., where I worked on developing features for a
-          web-based UI using Angular and TypeScript. This internship was my
-          first real taste of the professional software development world, and I
-          loved collaborating with such a talented team. It taught me how to
-          navigate the challenges of the software development life cycle and
-          deepened my understanding of industry standards and practices.
+          I gained valuable experience as a Software Developer Intern at
+          IPConfigure Inc., where I worked on a web-based UI using Angular and
+          TypeScript. This role taught me about the software development life
+          cycle and industry standards.
         </p>
         <p className="mt-4">
-          With this experience under my belt, I reflected on my own background
-          as a former reseller and recognized the challenges of managing
-          inventory and tracking profits. This insight inspired me to create{" "}
+          Recognizing the challenges of inventory management as a former
+          reseller, I created{" "}
           <Link
             target="_blank"
             className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"
@@ -51,30 +45,24 @@ export default function About() {
           >
             flipassist
           </Link>
-          , a full-stack web application designed to simplify inventory
-          management for resellers.
+          , a full-stack web application designed to simplify this process for
+          resellers.
         </p>
-
         <p className="mt-4">
-          I saw a gap in the market for an all-in-one solution, so I thought,
-          “What if I could build something that really helps?” I dedicated my
-          evenings to developing the app, focusing on features that would
-          address the specific needs of resellers. When I launched the beta
-          version, I was thrilled to see it quickly gain traction among others
-          in the community. It felt rewarding to create something that I knew
-          would make a difference for people like me.
+          I dedicated my evenings to developing the app, focusing on features
+          that address resellers&apos; specific needs. The beta version quickly
+          gained traction, and it was rewarding to create something impactful.
         </p>
-
         <p className="mt-4">
-          As I continue to grow as a developer, I remain passionate about
-          building quality software that enhances user experiences. My goal is
-          to contribute to meaningful projects and develop innovative solutions
+          As I continue to grow as a developer, I am passionate about building
+          quality software that enhances user experiences. My goal is to
+          contribute to meaningful projects and develop innovative solutions
           that make a positive impact. I look forward to joining a team where I
           can apply my skills as a software engineer to create valuable
           products.
         </p>
 
-        <h3 className="text-slate-800 mt-5 mb-1 dark:text-slate-50 font-bold text-xl tracking-normal">
+        <h3 className="text-slate-800 my-5 dark:text-slate-50 font-bold text-xl tracking-tight">
           Technical Contributions
         </h3>
         <ul className="list-disc pl-5 mt-2">
@@ -87,8 +75,7 @@ export default function About() {
             >
               IPConfigure Inc.
             </Link>
-            , where I developed a web-based UI using Angular and TypeScript,
-            making it easier for users to interact with IP camera streams.
+            , where I developed a web-based UI using Angular and TypeScript.
           </li>
           <li className="mb-2">
             Founder and developer of{" "}
@@ -99,18 +86,15 @@ export default function About() {
             >
               flipassist
             </Link>
-            , a successful full-stack web app for resellers that streamlines
-            inventory management and boosts profitability.
+            , a successful full-stack web app for resellers.
           </li>
           <li className="mb-2">
-            Actively contributed to high-profile open source projects, including
-            a library with over 500 stars on GitHub, improving code quality and
-            adding new features.
+            Contributed to high-profile open-source projects, including a
+            library with over 500 stars on GitHub.
           </li>
           <li className="mb-2">
             Organized and led coding workshops at local community centers,
-            teaching programming basics and sparking interest in tech among high
-            school students.
+            teaching programming basics to high school students.
           </li>
         </ul>
       </div>
