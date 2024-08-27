@@ -19,9 +19,9 @@ export default function About() {
           About Me
         </h3>
         <p>
-          I am a software developer pursuing a Bachelor of Science in Computer
-          Science at George Mason University. Originally from Virginia Beach, I
-          have a deep passion for software development and open-source projects.
+          Hello and welcome to my website! My name is Saad, and I am a software developer pursuing a Bachelor of Science in Computer
+          Science at George Mason University. Originally from the Virginia Beach area, I
+          have a deep passion for software development and design.
         </p>
         <p className="mt-4">
           My journey into technology began in my early teens, driven by a
@@ -31,13 +31,13 @@ export default function About() {
         </p>
         <p className="mt-4">
           I gained valuable experience as a Software Developer Intern at
-          IPConfigure Inc., where I worked on a web-based UI using Angular and
+          IPConfigure Inc., where I worked with a talented team on a web-based UI using Angular and
           TypeScript. This role taught me about the software development life
           cycle and industry standards.
         </p>
         <p className="mt-4">
-          Recognizing the challenges of inventory management as a former
-          reseller, I created{" "}
+          In my time learning more about software development, I recognized the challenges of inventory management as a former
+          reseller, so I created{" "}
           <Link
             target="_blank"
             className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"
@@ -45,7 +45,7 @@ export default function About() {
           >
             flipassist
           </Link>
-          , a full-stack web application designed to simplify this process for
+          , a full-stack web app designed to simplify this process for
           resellers.
         </p>
         <p className="mt-4">

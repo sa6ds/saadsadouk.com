@@ -20,7 +20,7 @@ const ImageItem = ({ src, rotate }: { src: string; rotate: boolean }) => (
 );
 
 export default function Home() {
-  const allPostsData = getSortedPostsData(); // Fetch blog post data
+  const allPostsData = getSortedPostsData(); 
 
   return (
     <PageLayout>
