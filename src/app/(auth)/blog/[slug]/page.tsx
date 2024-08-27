@@ -60,7 +60,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                 >
                   <a
                     href={`#${id}`}
-                    className="absolute -left-6 opacity-0 group-hover:opacity-100 transition-opacity text-slate-800 dark:text-slate-50"
+                    className="absolute -left-6 opacity-0 group-hover:opacity-100 transition-opacity text-slate-800 dark:text-slate-50 hidden sm:inline-block"
                   >
                     #
                   </a>

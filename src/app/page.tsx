@@ -9,7 +9,9 @@ const ImageItem = ({ src, rotate }: { src: string; rotate: boolean }) => (
     <Image
       src={src}
       alt="Picture of the author"
-      layout="fill"
+      fill
+      sizes="(max-width: 768px) 192px, 224px"
+      priority
       className={`object-cover overflow-hidden rounded-xl ${
         rotate ? "rotate-1" : "-rotate-1"
       }`}
@@ -56,9 +58,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full pointer-events-none py-2 -mt-24 sm:-mt-24 md:-mt-16 overflow-x-visible">
-        <div className="flex justify-center -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="min-w-max min-h-max flex flex-nowrap space-x-4 md:space-x-8">
+      <div className="absolute left-0 right-0 w-full pointer-events-none py-2 -mt-24 sm:-mt-24 md:-mt-16 overflow-hidden">
+        <div className="flex justify-center">
+          <div className="flex flex-nowrap space-x-4 md:space-x-8">
             <ImageItem src="/img-2.jpg" rotate />
             <ImageItem src="/img-1.jpg" rotate={false} />
             <ImageItem src="/img-5.jpg" rotate />

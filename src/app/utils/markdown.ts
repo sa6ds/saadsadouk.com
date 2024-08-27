@@ -53,3 +53,9 @@ export async function getPostData(id: string): Promise<BlogPostData> {
     pubDate: matterResult.data.pubDate as string,
   };
 }
+
+export const allPostsData: BlogPostData[] = getSortedPostsData();
+
+export const sortedPosts = allPostsData.sort((a, b) => {
+  return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+});
