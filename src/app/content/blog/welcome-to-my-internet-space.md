@@ -12,7 +12,7 @@ In the process, I've picked up a few other languages and frameworks. Now, feelin
 
 # The Inspiration Behind My Design
 
-![Figma Design](/images/figma-design.png)
+![Figma Design](/blog-images/figma-design.png)
 
 Before desiging the site, I knew I wanted to add a blog section to be able to share quick thoughts about software development, UI/UX, or any other topic that interests me. As a means of getting inspiration on design, I visited a lot of websites, one of which is [Prettyfolio](https://prettyfolio.com/), that I found through Ansub on X.
 

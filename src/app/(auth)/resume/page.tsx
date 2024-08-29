@@ -27,6 +27,7 @@ export default function Resume() {
                 alt="Resume PDF"
                 width={20}
                 height={20}
+                className="dark:invert"
               />
             </a>
             <a
@@ -39,6 +40,7 @@ export default function Resume() {
                 alt="GitHub"
                 width={24}
                 height={24}
+                className="dark:invert"
               />
             </a>
 
@@ -52,6 +54,7 @@ export default function Resume() {
                 alt="LinkedIn"
                 width={24}
                 height={24}
+                className="dark:invert"
               />
             </a>
           </div>
