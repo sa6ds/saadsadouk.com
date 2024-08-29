@@ -51,7 +51,7 @@ export default function About() {
         </p>
         <p className="mt-4">
           I dedicated my evenings to developing the app, focusing on features
-          that address resellers' specific needs. The beta version quickly
+          that address resellers&apos; specific needs. The beta version quickly
           gained traction, attracting a growing user base within the first
           month. Seeing this rapid adoption and positive feedback was incredibly
           rewarding and further fueled my passion for software development.
