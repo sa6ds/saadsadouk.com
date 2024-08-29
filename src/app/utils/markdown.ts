@@ -12,6 +12,7 @@ export type BlogPostData = {
   title: string;
   pubDate: string;
   contentHtml?: string;
+  tldr?: string;
 };
 
 export function getSortedPostsData(): BlogPostData[] {
@@ -34,8 +35,21 @@ export function getSortedPostsData(): BlogPostData[] {
   });
 }
 
-export async function getPostData(id: string): Promise<BlogPostData> {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+export async function getPostData(slug: string): Promise<BlogPostData | null> {
+  const postsDirectory = path.join(
+    process.cwd(),
+    "src",
+    "app",
+    "content",
+    "blog"
+  );
+  const fullPath = path.join(postsDirectory, `${slug}.md`);
+
+  if (!fs.existsSync(fullPath)) {
+    console.error(`File not found: ${fullPath}`);
+    return null;
+  }
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
@@ -47,9 +61,16 @@ export async function getPostData(id: string): Promise<BlogPostData> {
   const contentHtml = processedContent.toString();
 
   return {
-    id,
+    id: slug,
     contentHtml,
     title: matterResult.data.title as string,
     pubDate: matterResult.data.pubDate as string,
+    tldr: matterResult.data.tldr,
   };
 }
+
+export const allPostsData: BlogPostData[] = getSortedPostsData();
+
+export const sortedPosts = allPostsData.sort((a, b) => {
+  return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
+});

@@ -1,16 +1,9 @@
-import { getSortedPostsData, BlogPostData } from "../../utils/markdown";
 import Link from "next/link";
 import PageLayout from "../PageLayout";
 import { abbreviateMonth } from "@/app/utils/date";
+import { sortedPosts } from "@/app/utils/markdown";
 
 export default function Blog() {
-  // Get the sorted posts data
-  const allPostsData: BlogPostData[] = getSortedPostsData();
-
-  const sortedPosts = allPostsData.sort((a, b) => {
-    return new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime();
-  });
-
   return (
     <PageLayout>
       <h1 className="text-5xl md:text-6xl lg:text-7xl">

@@ -21,6 +21,7 @@ export async function generateStaticParams() {
 
 export default async function BlogPost({ params }: BlogPostProps) {
   const postData = await getPostData(params.slug);
+  if (!postData) throw new Error(`Post not found: ${params.slug}`);
   const readingTime = calculateReadingTime(postData.contentHtml || "");
 
   return (
@@ -42,6 +43,13 @@ export default async function BlogPost({ params }: BlogPostProps) {
         </p>
       </div>
       <div className="prose prose-lg dark:prose-invert">
+        {postData.tldr && (
+  
+            <p className="text-slate-500 dark:text-slate-300">
+              <strong className="text-slate-800 dark:text-slate-50">tldr:</strong>{" "}
+              {postData.tldr}
+            </p>      
+        )}
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
           components={{
@@ -60,7 +68,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                 >
                   <a
                     href={`#${id}`}
-                    className="absolute -left-6 opacity-0 group-hover:opacity-100 transition-opacity text-slate-800 dark:text-slate-50"
+                    className="absolute -left-6 opacity-0 group-hover:opacity-100 transition-opacity text-slate-800 dark:text-slate-50 hidden sm:inline-block"
                   >
                     #
                   </a>

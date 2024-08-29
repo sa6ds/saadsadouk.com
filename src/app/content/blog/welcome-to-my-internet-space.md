@@ -1,9 +1,8 @@
 ---
-title: "Welcome to My Internet Space!"
-pubDate: "Aug 25, 2024"
+title: "Welcome to My Internet Space"
+pubDate: "08-25-2024"
+tldr: "Welcome to my corner of the internet! I'm super excited about sharing neat learnings from my journey of software development and design."
 ---
-
-**tldr:** Welcome to my corner of the internet! I'm super excited about sharing neat learnings from my journey of software development and design.
 
 # Why I Built This Website
 
@@ -21,7 +20,7 @@ I'm a huge believer in clean, minimalistic design that doesn't sacrifice on feel
 
 # The Technology Behind the Site
 
-This brings me to the tech stack I used in building this site. I went with **Next.js** **Tailwind CSS** and **TypeScript**. Just by putting these technologies together, it gives me a consistent design language that will let me hit an aesthetically-pleasing layout responsive to my minimalistic tastes as well as maintain a type-safe codebase.
+This brings me to the tech stack I used in building this site. I went with **Next.js**, **Tailwind CSS** and **TypeScript**. Just by putting these technologies together, it gives me a consistent design language that will let me hit an aesthetically-pleasing layout responsive to my minimalistic tastes as well as maintain a type-safe codebase.
 
 I used **remark** and **react-markdown** for the blog feature. This provides a lot of benefits when working with static Markdown files. Among them are:
 
