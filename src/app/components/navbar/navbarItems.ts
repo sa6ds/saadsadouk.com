@@ -12,10 +12,10 @@ export const NavbarItems: NavbarItem[] = [
     label: "about",
     url: "/about",
   },
-  // {
-  //   label: "resume",
-  //   url: "/resume",
-  // },
+  {
+    label: "resume",
+    url: "/resume",
+  },
   {
     label: "blog",
     url: "/blog",

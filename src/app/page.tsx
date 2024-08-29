@@ -2,7 +2,7 @@ import Image from "next/image";
 import PageLayout from "./(auth)/PageLayout";
 import Link from "next/link";
 import { getSortedPostsData } from "./utils/markdown";
-import { abbreviateMonth } from "./utils/date";
+import { abbreviateMonth, timeSince } from "./utils/date";
 
 const ImageItem = ({ src, rotate }: { src: string; rotate: boolean }) => (
   <div className="relative h-64 w-48 md:h-72 md:w-56">
@@ -20,7 +20,7 @@ const ImageItem = ({ src, rotate }: { src: string; rotate: boolean }) => (
 );
 
 export default function Home() {
-  const allPostsData = getSortedPostsData(); 
+  const allPostsData = getSortedPostsData();
 
   return (
     <PageLayout>
@@ -49,8 +49,9 @@ export default function Home() {
               <Link className="flex text-sm font-semibold" href={`/blog/${id}`}>
                 <h2 className="w-96 my-auto">{title}</h2>
                 <span className="h-1 w-1 bg-secondaryDarker rounded-full" />
+
                 <p className="ml-auto my-auto whitespace-nowrap">
-                  {abbreviateMonth(pubDate)}
+                  {timeSince(pubDate)}
                 </p>
               </Link>
             </div>
@@ -61,11 +62,11 @@ export default function Home() {
       <div className="absolute left-0 right-0 w-full pointer-events-none py-2 -mt-24 sm:-mt-24 md:-mt-16 overflow-hidden">
         <div className="flex justify-center">
           <div className="flex flex-nowrap space-x-4 md:space-x-8">
-            <ImageItem src="/img-2.jpg" rotate />
-            <ImageItem src="/img-1.jpg" rotate={false} />
-            <ImageItem src="/img-5.jpg" rotate />
-            <ImageItem src="/img-4.jpg" rotate={false} />
-            <ImageItem src="/img-3.jpg" rotate />
+            <ImageItem src="/landing-images/img-2.jpg" rotate />
+            <ImageItem src="/landing-images/img-1.jpg" rotate={false} />
+            <ImageItem src="/landing-images/img-5.jpg" rotate />
+            <ImageItem src="/landing-images/img-4.jpg" rotate={false} />
+            <ImageItem src="/landing-images/img-3.jpg" rotate />
           </div>
         </div>
       </div>

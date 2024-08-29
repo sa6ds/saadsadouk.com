@@ -1,9 +1,8 @@
 ---
-title: "Welcome to my Internet Space!"
-pubDate: "Aug 25, 2024"
+title: "Welcome to My Internet Space"
+pubDate: "08-25-2024"
+tldr: "Welcome to my corner of the internet! I'm super excited about sharing neat learnings from my journey of software development and design."
 ---
-
-**tldr:** Welcome to my corner of the internet! I'm super excited about sharing neat learnings from my journey of software development and design.
 
 # Why I Built This Website
 
