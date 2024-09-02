@@ -71,8 +71,6 @@ export default function RootLayout({
           sizes="180x180"
           href="/svgs/faviconLight.svg"
         />
-
-        <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/svgs/faviconLight.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />

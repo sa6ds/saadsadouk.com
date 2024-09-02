@@ -19,6 +19,8 @@ const ImageItem = ({ src, rotate }: { src: string; rotate: boolean }) => (
   </div>
 );
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   const allPostsData = getSortedPostsData();
 
