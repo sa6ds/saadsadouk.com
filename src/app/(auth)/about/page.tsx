@@ -1,6 +1,18 @@
 import { pageItems } from "@/app/components/pageItems/pageItems";
 import Link from "next/link";
 import PageLayout from "../PageLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About - Saad Sadouk",
+  description:
+    "Learn about me, Saad Sadouk, a Full-Stack Developer and student at George Mason University. Discover my background, skills, and passion for software engineering.",
+  openGraph: {
+    title: "About - Saad Sadouk",
+    description:
+      "Learn about me, Saad Sadouk, a Full-Stack Developer and student at George Mason University. Discover my background, skills, and passion for software engineering.",
+  },
+};
 
 export default function About() {
   const { name } = pageItems.about;

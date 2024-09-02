@@ -6,7 +6,7 @@ tldr: "Welcome to my corner of the internet! I'm super excited about sharing nea
 
 # Why I Built This Website
 
-The last personal website I did was a simple project using pure HTML, CSS, and JavaScript. This was more of a learning exercise, and I helped me get down to the very core of how websites are built. I learned many useful things from that process, which became ground for further future actions.
+The last personal website I did was a simple project using pure HTML, CSS, and JavaScript. This was more of a learning exercise and helped me get down to the very core of how websites are built. I learned many useful things from that process, which became ground for further future actions.
 
 In the process, I've picked up a few other languages and frameworks. Now, feeling experienced, I thought it best to revisit the necessity of a nicely done portfolio site that speaks for itself—who I am and what I do. This is not only a portfolio site but a space where I can express my thoughts, ideas, and projects out to the world.
 

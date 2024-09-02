@@ -5,7 +5,7 @@ export function timeSince(date: string): string {
   const difference = Math.floor(
     (now.getTime() - postDate.getTime()) / (1000 * 60 * 60 * 24)
   );
-  
+
   // Return appropriate string based on time difference
   if (difference < 1) {
     return "today";
@@ -23,11 +23,21 @@ export function timeSince(date: string): string {
 // Function to convert date string to abbreviated month format
 export function abbreviateMonth(date: string): string {
   const monthAbbreviations = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
-  const parts = date.split('-');
+  const parts = date.split("-");
   if (parts.length !== 3) {
     return date; // Return original date if format is unexpected
   }

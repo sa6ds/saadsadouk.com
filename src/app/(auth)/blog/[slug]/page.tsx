@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  getPostData,
-  getSortedPostsData,
-  BlogPostData,
-} from "../../../utils/markdown";
+import { getPostData, getSortedPostsData } from "../../../utils/markdown";
 import PageLayout from "../../PageLayout";
 import { abbreviateMonth, timeSince } from "../../../utils/date";
 import { calculateReadingTime } from "../../../utils/readingTime";
@@ -13,6 +9,8 @@ import rehypeRaw from "rehype-raw";
 type BlogPostProps = {
   params: { slug: string };
 };
+
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   const posts = getSortedPostsData();
@@ -44,11 +42,10 @@ export default async function BlogPost({ params }: BlogPostProps) {
       </div>
       <div className="prose prose-lg dark:prose-invert">
         {postData.tldr && (
-  
-            <p className="text-slate-500 dark:text-slate-300">
-              <strong className="text-slate-800 dark:text-slate-50">tldr:</strong>{" "}
-              {postData.tldr}
-            </p>      
+          <p className="text-slate-500 dark:text-slate-300">
+            <strong className="text-slate-800 dark:text-slate-50">tldr:</strong>{" "}
+            {postData.tldr}
+          </p>
         )}
         <ReactMarkdown
           rehypePlugins={[rehypeRaw]}
