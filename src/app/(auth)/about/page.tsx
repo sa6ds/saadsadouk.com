@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     title: "About - Saad Sadouk",
     description:
       "Learn about me, Saad Sadouk, a Full-Stack Developer and student at George Mason University. Discover my background, skills, and passion for software engineering.",
+    images: [
+      {
+        url: "https://www.saadsadouk.com/api/og",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 

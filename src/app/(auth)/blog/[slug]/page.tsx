@@ -124,6 +124,13 @@ export default async function BlogPost({ params }: BlogPostProps) {
                 {...props}
               />
             ),
+            video: ({ node, ...props }) => (
+              <video
+                controls
+                className="max-w-full h-auto my-4 mx-auto"
+                {...props}
+              />
+            ),
           }}
         >
           {postData.contentHtml || ""}
