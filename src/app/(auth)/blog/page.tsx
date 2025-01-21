@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     title: "Blog - Saad Sadouk",
     description:
       "Explore my blog posts on software development, technology trends, and personal insights.",
+    images: [
+      {
+        url: "https://www.saadsadouk.com/api/og",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
