@@ -22,7 +22,7 @@ To keep our focus on real users, we created personas like Alex, a broke art stud
 
 # The Tech Decisions That Mattered
 
-For the frontend, we went with **React** and **TypeScript**, paired with a **Flask** backend. The big challenge was figuring out how to gather product data without creating a maintenance nightmare.
+For the frontend, we went with **React** for the frontend, paired with a **Flask** backend. The big challenge was figuring out how to gather product data without creating a maintenance nightmare.
 
 At first, we considered scraping websites directly. But after digging into the risks (like getting blocked or dealing with constantly changing layouts), we pivoted. That’s when I suggested using the Google Shopping API through [SerpApi](https://serpapi.com/). It wasn’t free, but it saved us time and headaches in the long run.
 
