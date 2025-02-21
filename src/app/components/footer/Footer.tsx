@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="w-full mt-auto">
-      <div className="w-full max-w-[550px] flex h-8 items-center justify-between mx-auto">
+    <footer className="w-full py-4">
+      <div className="w-full max-w-[550px] flex h-8 items-center justify-between mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-1 text-sm text-slate-500 dark:text-slate-400">
           <span>designed & developed by</span>
           <Link
-            href="https://github.com/sa6ds"
+            href="https://www.saadsadouk.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"

@@ -38,7 +38,7 @@ export default function About() {
           About Me
         </h3>
         <p>
-          Welcome to my internet space! My name is Saad, a software developer
+          Welcome to my internet space! My name is Saad, a Software Engineer
           pursuing a Bachelor of Science in Computer Science at George Mason
           University. Originally from the Virginia Beach area, I have a deep
           passion for software development and design.

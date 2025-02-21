@@ -101,7 +101,7 @@ export default function Resume() {
           <div>
             <div className="flex justify-between items-center">
               <h3 className="font-bold text-slate-800 dark:text-slate-50">
-                Software Developer Intern
+                Software Engineer Intern
               </h3>
               <span className="text-sm text-slate-500 dark:text-slate-400">
                 2022 - 2022

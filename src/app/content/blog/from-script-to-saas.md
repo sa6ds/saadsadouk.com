@@ -1,12 +1,12 @@
 ---
 title: "From Script to SaaS: Building flipassist.app"
-pubDate: "02-20-2025"
+pubDate: "02-21-2025"
 tldr: "What started as a Python script to calculate sneaker profits evolved into flipassist.app—a full-stack reselling toolkit. This post dives into the development process, from the initial idea to launch, and the lessons I learned along the way."
 ---
 
 # The Backstory: A Reseller's Need
 
-My journey with flipassist began years ago as a reseller. After buying a pair of shoes, I'd need to quickly calculate potential profits, factoring in platform fees to ensure I was making a worth while profit. calculating the fees was a pain, so I wrote a simple Python script to test what I'd learned in class. It worked well enough, and I still have it saved as a memento of where this project started.
+My journey with flipassist began years ago as a reseller. After buying a pair of shoes, I'd need to quickly calculate potential profits, factoring in platform fees to ensure I was making a worth while profit. Calculating the fees was a pain, so as a first semester CS student I wrote a simple Python script to test what I'd learned in class. It worked well enough at the time, and I still have it saved as a memento of where this project started.
 
 ```python
 soldprice = float(input('Sold Price: $'))
@@ -67,10 +67,10 @@ Integrating **Stripe** required careful planning. I had to define control flows:
 
 # Launch and Beyond
 
-With payments resolved, I prepared the product for the official launch. I posted the app on Product Hunt, shared updates through X and Discord, and made it official. Flipassist went live at [flipassist.app](https://www.flipassist.app/). It's now operational and growing with a community of over 100 users all over the world.
+With payments resolved, I prepared the product for the official launch. I posted the app on Product Hunt, shared updates through X and Discord, and made it official. Flipassist launched at [flipassist.app](https://www.flipassist.app/). It's now operational and growing with a community of over 100 users all over the world.
 
 What started as a simple script to calculate sneaker profits has evolved into a full-stack reselling toolkit. This journey from a basic script to a launched SaaS taught me that true software development isn't linear; it's a process of refining ideas, adapting to user needs, and building systems that last.
 
 <br/>
 
-Thanks for reading! If you'd like to see a more detailed look at how I built the app, the app is open source and the PR's are available on [GitHub](https://github.com/sa6ds/flipassist/pulls?q=) with pics of how the app looked at each step of the way.
+Thanks for reading! If you'd like to see a more detailed look at how I built the app, the app is open source and the PR's are available on [GitHub](https://github.com/sa6ds/flipassist) with pics of how the app looked at each step of the way.
