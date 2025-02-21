@@ -5,6 +5,7 @@ import { abbreviateMonth, timeSince } from "../../../utils/date";
 import { calculateReadingTime } from "../../../utils/readingTime";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import CodeBlock from "@/app/components/CodeBlock";
 
 type BlogPostProps = {
   params: { slug: string };
@@ -17,10 +18,25 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.id }));
 }
 
+const mergeCodeBlocks = (content: string): string => {
+  const normalizedContent = content.replace(/\r\n/g, "\n");
+
+  return normalizedContent.replace(
+    /```(\w+)[\s\S]*?```[\s]*```\1[\s\S]*?```/g,
+    (match) => {
+      // Remove the middle "```language" markers and keep the content
+      return match.replace(/```\w+\n([\s\S]*?)```[\s]*```\w+\n/g, "$1");
+    }
+  );
+};
+
 export default async function BlogPost({ params }: BlogPostProps) {
   const postData = await getPostData(params.slug);
   if (!postData) throw new Error(`Post not found: ${params.slug}`);
-  const readingTime = calculateReadingTime(postData.contentHtml || "");
+
+  const processedContent = mergeCodeBlocks(postData.contentHtml || "");
+
+  const readingTime = calculateReadingTime(processedContent);
 
   return (
     <PageLayout>
@@ -74,7 +90,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
               );
             },
             p: ({ node, ...props }) => (
-              <p
+              <div
                 className="my-3 text-slate-500 dark:text-slate-300"
                 {...props}
               />
@@ -98,18 +114,37 @@ export default async function BlogPost({ params }: BlogPostProps) {
               <ol className="list-decimal pl-5 mt-2" {...props} />
             ),
             li: ({ node, ...props }) => <li className="mb-2" {...props} />,
-            code: ({ node, ...props }) => (
-              <code
-                className="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 p-1 rounded"
-                {...props}
-              />
-            ),
-            pre: ({ node, ...props }) => (
-              <pre
-                className="bg-slate-100 dark:bg-slate-800 p-4 rounded overflow-x-auto my-4"
-                {...props}
-              />
-            ),
+            code: ({
+              node,
+              className,
+              children = "",
+              ...props
+            }: {
+              node?: any;
+              className?: string;
+              children?: React.ReactNode;
+            } & React.HTMLAttributes<HTMLElement> & { inline?: boolean }) => {
+              const { inline } = props;
+              const match = /language-(\w+)/.exec(className || "");
+              const language = match ? match[1] : "";
+
+              if (inline) {
+                return (
+                  <code className="bg-gray-800 rounded px-1" {...props}>
+                    {children}
+                  </code>
+                );
+              }
+
+              return (
+                <CodeBlock
+                  language={language}
+                  value={String(children).replace(/\n$/, "")}
+                  showLineNumbers
+                />
+              );
+            },
+            pre: ({ node, ...props }) => <pre {...props} />,
             a: ({ node, ...props }) => (
               <a
                 target="_blank"
@@ -120,7 +155,8 @@ export default async function BlogPost({ params }: BlogPostProps) {
             img: ({ node, ...props }) => (
               <img
                 alt={props.alt}
-                className="max-w-full h-auto my-4 mx-auto"
+                className="max-w-full h-auto my-4 mx-auto pointer-events-none select-none"
+                draggable="false"
                 {...props}
               />
             ),
@@ -133,7 +169,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
             ),
           }}
         >
-          {postData.contentHtml || ""}
+          {processedContent}
         </ReactMarkdown>
       </div>
     </PageLayout>

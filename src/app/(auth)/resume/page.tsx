@@ -87,20 +87,10 @@ export default function Resume() {
               George Mason University
             </h3>
             <span className="text-sm text-slate-500 dark:text-slate-400">
-              2023 - 2025
+              2021 - 2025
             </span>
           </div>
           <p className="mb-4">Bachelors of Science Computer Science</p>
-
-          <div className="flex justify-between items-center">
-            <h3 className="font-bold text-slate-800 dark:text-slate-50">
-              Virginia Peninsula Community College
-            </h3>
-            <span className="text-sm text-slate-500 dark:text-slate-400">
-              2021 - 2023
-            </span>
-          </div>
-          <p>Associates of Science Computer Science</p>
         </div>
         <div className="flex w-full justify-between border-b border-neutral-200/80 border-dashed pb-3 text-sm text-neutral-600"></div>
 
@@ -142,6 +132,23 @@ export default function Resume() {
               Streamline Your Reselling Game with Our Comprehensive Toolkit.
               Effortlessly manage inventory and simplify operations for
               efficient reselling success.
+            </p>
+          </div>
+          <div className="mb-6">
+            <h3 className="font-bold text-slate-800 dark:text-slate-50">
+              <a
+                href="/blog/building-frugal-finder"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                frugalfinder
+              </a>
+            </h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              A web application designed to help students find the best deals on
+              school essentials. By comparing prices across multiple retailers,
+              students can make informed purchasing decisions and save money on
+              their educational supplies.
             </p>
           </div>
           <div className="mb-6">

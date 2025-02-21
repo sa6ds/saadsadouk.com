@@ -35,6 +35,26 @@ export function getSortedPostsData(): BlogPostData[] {
   });
 }
 
+const mergeCodeBlocks = (content: string): string => {
+  const normalizedContent = content.replace(/\r\n/g, "\n");
+
+  return normalizedContent.replace(
+    /(```[a-z]*\n[\s\S]*?\n```)\s*(```[a-z]*\n[\s\S]*?\n```)/g,
+    (_, firstBlock, secondBlock) => {
+      const firstMatch = firstBlock.match(/```([a-z]*)\n([\s\S]*?)\n```/);
+      const secondMatch = secondBlock.match(/```([a-z]*)\n([\s\S]*?)\n```/);
+
+      if (firstMatch && secondMatch && firstMatch[1] === secondMatch[1]) {
+        const firstContent = firstMatch[2].trim();
+        const secondContent = secondMatch[2].trim();
+        return `\`\`\`${firstMatch[1]}\n${firstContent}\n\n${secondContent}\n\`\`\``;
+      }
+
+      return `${firstBlock}\n${secondBlock}`;
+    }
+  );
+};
+
 export async function getPostData(slug: string): Promise<BlogPostData | null> {
   const postsDirectory = path.join(
     process.cwd(),
@@ -54,15 +74,11 @@ export async function getPostData(slug: string): Promise<BlogPostData | null> {
 
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(remarkRehype)
-    .use(rehypeStringify)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const processedContent = mergeCodeBlocks(matterResult.content);
 
   return {
     id: slug,
-    contentHtml,
+    contentHtml: processedContent,
     title: matterResult.data.title as string,
     pubDate: matterResult.data.pubDate as string,
     tldr: matterResult.data.tldr,
