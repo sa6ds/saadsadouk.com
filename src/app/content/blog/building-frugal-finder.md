@@ -14,7 +14,7 @@ The best part? This wasn’t just a theoretical project for a grade; we were act
 
 # Why We Made FrugalFinder
 
-![Frugal Finder Demo](/blog-assets/frugal-finder-demo.gif)
+![Frugal Finder Demo](/blog-assets/building-frugal-finder/frugal-finder-demo.gif)
 
 Our team decided to tackle a problem we all knew well: the high cost of school supplies. We wanted to make it easier for students to find affordable options.
 
@@ -26,7 +26,7 @@ For the stack, we chose **React** and **Tailwind** for the frontend, coupled wit
 
 At first, we considered scraping websites directly. But after digging into the risks (like getting blocked or dealing with constantly changing layouts), we pivoted. That’s when I suggested using the Google Shopping API through [SerpApi](https://serpapi.com/). It wasn’t free, but it saved us time and headaches in the long run.
 
-![Frugal Finder Software Architecture](/blog-assets/frugal-finder-arch.png)
+![Frugal Finder Software Architecture](/blog-assets/building-frugal-finder/frugal-finder-arch.png)
 
 # Learning to Work as a Team
 

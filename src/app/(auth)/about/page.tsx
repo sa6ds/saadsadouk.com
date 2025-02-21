@@ -38,26 +38,32 @@ export default function About() {
           About Me
         </h3>
         <p>
-          Hello and welcome to my website! My name is Saad, and I am a software
-          developer pursuing a Bachelor of Science in Computer Science at George
-          Mason University. Originally from the Virginia Beach area, I have a
-          deep passion for software development and design.
+          Welcome to my internet space! My name is Saad, a software developer
+          pursuing a Bachelor of Science in Computer Science at George Mason
+          University. Originally from the Virginia Beach area, I have a deep
+          passion for software development and design.
         </p>
         <p className="mt-4">
           My journey into technology began in my early teens, driven by a
-          curiosity about how computers and software work. This led me to earn
-          an Associate in Computer Science from Virginia Peninsula Community
-          College with a GPA of 3.9.
+          curiosity about how computers and software work. This led me to persue
+          my Bachelor of Science in Computer Science at George Mason University.
         </p>
         <p className="mt-4">
-          I gained valuable experience as a Software Developer Intern at
-          IPConfigure Inc., where I worked with a talented team on a web-based
-          UI using Angular and TypeScript. This role taught me about the
-          software development life cycle and industry standards.
+          I gained valuable experience as a Software Engineer Intern at{" "}
+          <a
+            href="https://www.ipconfigure.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"
+          >
+            IPConfigure Inc.
+          </a>
+          , where I worked with a talented team on a web-based UI using Angular
+          and TypeScript. This role taught me about the software development
+          life cycle and industry standards.
         </p>
         <p className="mt-4">
-          In my time learning more about software development, I recognized the
-          challenges of inventory management as a former reseller, so I created{" "}
+          I&apos;m the sole developer and founder of{" "}
           <Link
             target="_blank"
             className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"
@@ -65,16 +71,18 @@ export default function About() {
           >
             flipassist
           </Link>
-          , a full-stack web app designed to simplify this process for
-          resellers.
+          , a successful all-in-one toolkit with 100+ users from all over the
+          world and growing. Read more about how I transformed a simple script
+          into a successful SaaS{" "}
+          <Link
+            className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"
+            href={"/blog/from-script-to-saas"}
+          >
+            here
+          </Link>
+          .
         </p>
-        <p className="mt-4">
-          I dedicated my evenings to developing the app, focusing on features
-          that address resellers&apos; specific needs. The beta version quickly
-          gained traction, attracting a growing user base within the first
-          month. Seeing this rapid adoption and positive feedback was incredibly
-          rewarding and further fueled my passion for software development.
-        </p>
+
         <p className="mt-4">
           As I continue to grow as a developer, I am passionate about building
           quality software that enhances user experiences. My goal is to
@@ -100,7 +108,7 @@ export default function About() {
             , where I developed a web-based UI using Angular and TypeScript.
           </li>
           <li className="mb-2">
-            Founder and developer of{" "}
+            Founder and sole developer of{" "}
             <Link
               target="_blank"
               className="border-b border-gray-300 transition-[border-color] hover:border-gray-600 dark:border-gray-500 dark:hover:border-white"
@@ -108,7 +116,7 @@ export default function About() {
             >
               flipassist
             </Link>
-            , a successful full-stack web app for resellers.
+            , a successful all-in-one toolkit with 100+ users worldwide.
           </li>
           <li className="mb-2">
             Contributed to high-profile open-source projects, including a
