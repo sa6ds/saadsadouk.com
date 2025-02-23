@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 import { themeEffect } from "./themeEffect";
+import { trackEvent } from "@/app/utils/analytics";
 
 export function ThemeToggle() {
   const [preference, setPreference] = useState<undefined | null | string>(
@@ -41,6 +42,35 @@ export function ThemeToggle() {
     return () => window.removeEventListener("storage", onStorageChange);
   });
 
+  const handleThemeChange = (ev: React.MouseEvent) => {
+    ev.preventDefault();
+    setIsHoveringOverride(true);
+
+    let newPreference: string | null =
+      currentTheme === "dark" ? "light" : "dark";
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+
+    if (preference !== null && systemTheme === currentTheme) {
+      newPreference = null;
+      localStorage.removeItem("theme");
+    } else {
+      localStorage.setItem("theme", newPreference);
+    }
+
+    // Track theme change
+    trackEvent({
+      event: "theme_change",
+      category: "user_preference",
+      action: "change_theme",
+      label: newPreference || "system",
+    });
+
+    setPreference(newPreference);
+  };
+
   return (
     <div className="flex items-center">
       {isHovering && (
@@ -63,26 +93,7 @@ export function ThemeToggle() {
           dark:[&_.moon-icon]:hidden
           dark:[&_.sun-icon]:inline
         }`}
-        onClick={(ev) => {
-          ev.preventDefault();
-          setIsHoveringOverride(true);
-
-          let newPreference: string | null =
-            currentTheme === "dark" ? "light" : "dark";
-          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-            .matches
-            ? "dark"
-            : "light";
-
-          if (preference !== null && systemTheme === currentTheme) {
-            newPreference = null;
-            localStorage.removeItem("theme");
-          } else {
-            localStorage.setItem("theme", newPreference);
-          }
-
-          setPreference(newPreference);
-        }}
+        onClick={handleThemeChange}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => {
           setIsHovering(false);
