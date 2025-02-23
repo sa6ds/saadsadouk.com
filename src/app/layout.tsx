@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { themeEffect } from "./components/theme/themeEffect";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Saad Sadouk - Software Engineer",
@@ -82,6 +83,7 @@ export default function RootLayout({
       </head>
       <body className="top-full text-slate-500 dark:bg-black dark:text-slate-300 m-0 min-h-[100vh]">
         {children}
+        <GoogleAnalytics gaId="G-56HGH7R7L9" />
       </body>
     </html>
   );

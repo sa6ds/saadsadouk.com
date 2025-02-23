@@ -6,6 +6,7 @@ import { calculateReadingTime } from "../../../utils/readingTime";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import CodeBlock from "@/app/components/CodeBlock";
+import { PageViewTracker } from "@/app/components/analytics/PageViewTracker";
 
 type BlogPostProps = {
   params: { slug: string };
@@ -40,6 +41,11 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
   return (
     <PageLayout>
+      <PageViewTracker
+        pageType="blog"
+        title={postData.title}
+        slug={params.slug}
+      />
       <h1>
         <span className="flex flex-col">
           <span className="text-5xl text-slate-800 dark:text-slate-50 font-semibold tracking-tighter ">

@@ -1,31 +1,17 @@
+"use client";
+
 import { pageItems } from "@/app/components/pageItems/pageItems";
 import PageLayout from "../PageLayout";
 import Image from "next/image";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Resume - Saad Sadouk",
-  description:
-    "View my resume. I'm a Full-Stack Developer with experience in various technologies and projects.",
-  openGraph: {
-    title: "Resume - Saad Sadouk",
-    description:
-      "View my resume. I'm a Full-Stack Developer with experience in various technologies and projects.",
-    images: [
-      {
-        url: "https://www.saadsadouk.com/api/og",
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-};
+import { trackEvent } from "@/app/utils/analytics";
+import { PageViewTracker } from "@/app/components/analytics/PageViewTracker";
 
 export default function Resume() {
   const { name } = pageItems.resume;
 
   return (
     <PageLayout>
+      <PageViewTracker pageType="resume" title="Resume" />
       <h1 className="text-5xl md:text-6xl lg:text-7xl">
         <span className="flex flex-col">
           <span className="mb-[-10px] text-slate-800 dark:text-slate-50 font-semibold tracking-tight sm:tracking-tighter">
@@ -40,7 +26,19 @@ export default function Resume() {
           </h2>
 
           <div className="flex gap-4">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                trackEvent({
+                  event: "resume_download",
+                  category: "resume",
+                  action: "download_resume",
+                  label: "resume_pdf",
+                });
+              }}
+            >
               <Image
                 src="/svgs/clip.svg"
                 alt="Resume PDF"
@@ -53,6 +51,14 @@ export default function Resume() {
               href="https://github.com/sa6ds"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackEvent({
+                  event: "social_click",
+                  category: "social",
+                  action: "view_profile",
+                  label: "github",
+                });
+              }}
             >
               <Image
                 src="/svgs/githubIcon.svg"
@@ -67,6 +73,14 @@ export default function Resume() {
               href="https://www.linkedin.com/in/saadsadouk/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackEvent({
+                  event: "social_click",
+                  category: "social",
+                  action: "view_profile",
+                  label: "linkedin",
+                });
+              }}
             >
               <Image
                 src="/svgs/linkedinIcon.svg"
@@ -124,6 +138,14 @@ export default function Resume() {
                 href="https://github.com/sa6ds/flipassist"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent({
+                    event: "project_click",
+                    category: "projects",
+                    action: "view_project",
+                    label: "flipassist",
+                  });
+                }}
               >
                 flipassist
               </a>
@@ -140,6 +162,14 @@ export default function Resume() {
                 href="/blog/building-frugal-finder"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent({
+                    event: "project_click",
+                    category: "projects",
+                    action: "view_project",
+                    label: "frugalfinder",
+                  });
+                }}
               >
                 frugalfinder
               </a>
@@ -157,6 +187,14 @@ export default function Resume() {
                 href="https://github.com/sa6ds/imagen"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent({
+                    event: "project_click",
+                    category: "projects",
+                    action: "view_project",
+                    label: "imagen",
+                  });
+                }}
               >
                 imagen
               </a>
@@ -173,6 +211,14 @@ export default function Resume() {
                 href="https://www.saadsadouk.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent({
+                    event: "project_click",
+                    category: "projects",
+                    action: "view_project",
+                    label: "portfolio",
+                  });
+                }}
               >
                 saadsadouk.com
               </a>
